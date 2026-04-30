@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FakultasController;
+use App\Http\Controllers\ProdiController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,4 +14,4 @@ Route::get('/tentang', function () {
 
 Route::resource('/Fakultas', FakultasController::class);
 
-route::resource('/periode', FakultasController::class);
+route::resource('/prodi', ProdiController::class, 'index');
