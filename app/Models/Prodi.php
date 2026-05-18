@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prodi extends Model
 {
-    // memberi tahu kolom yang boleh di isi
+    // kolom yang diizinkan untuk diinsert data
     protected $fillable = [
         'nama_prodi',
         'singkatan',
@@ -14,6 +14,7 @@ class Prodi extends Model
         'fakultas_id'
     ];
 
+    // relaso model fakultas
     public function fakultas()
     {
         return $this->belongsTo(Fakultas::class);

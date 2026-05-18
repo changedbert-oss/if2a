@@ -9,7 +9,7 @@
     <th>Fakultas</th>
     </tr>
 
-    @foreach (%Prodis as $key => $prodi)
+    @foreach ($prodis as $key => $prodi)
     <tr>
         <td>{{$key + 1}}</td>
         <td>{{$prodi->nama_prodi}}</td>
