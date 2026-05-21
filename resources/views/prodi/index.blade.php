@@ -1,6 +1,11 @@
-<h1>Data Prodi</h1>
+@extends('main')
 
-<table border ="1" cellpadding="10">
+@section('title','program studi')
+
+@section('content')
+
+<a href="{{ route('prodi.create')}}" class = "btn btn-primary">tambah prodi</a>
+<table class ="table table-bordered">
     <tr>
     <th>No</th>
     <th>Nama Prodi</th>
@@ -19,3 +24,4 @@
     </tr>
     @endforeach
 </table>
+@endsection
