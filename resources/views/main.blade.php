@@ -221,7 +221,7 @@
           <li class="nav-item dropdown user-menu">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
               <img
-                src="{{ url('assets/img/image.png') }}"
+                src="{{ url('assets/img/avatar5.png') }}"
                 class="user-image rounded-circle shadow"
                 alt="User Image" />
               <span class="d-none d-md-inline">Ebet</span>
@@ -230,7 +230,7 @@
               <!--begin::User Image-->
               <li class="user-header text-bg-primary">
                 <img
-                  src="{{ url('assets/img/image.png') }}"
+                  src="{{ url('assets/img/avatar5.png') }}"
                   class="rounded-circle shadow"
                   alt="User Image" />
                 <p>
@@ -259,6 +259,17 @@
               <!--begin::Menu Footer-->
               <li class="user-footer">
                 <a href="#" class="btn btn-outline-secondary">Profile</a>
+                <!-- Authentication -->
+              <form method="POST" action="{{ route('logout') }}" class="d-inline">
+              @csrf
+
+              <x-dropdown-link :href="route('logout')"
+                  onclick="event.preventDefault();
+                                  this.closest('form').submit();"
+                  class="btn btn-outline-danger float-end">
+                  {{ __('Log Out') }}
+              </x-dropdown-link>
+              </form>
                 <a href="#" class="btn btn-outline-danger float-end">Sign out</a>
               </li>
               <!--end::Menu Footer-->
@@ -346,6 +357,12 @@
               <a href="{{ route('periode.index') }}" class="nav-link">
                 <i class="nav-icon bi bi-building"></i>
                 <p>Periode</p>
+              </a>
+            </li>
+             <li class="nav-item">
+              <a href="{{ route('mahasiswa.index') }}" class="nav-link">
+                <i class="nav-icon bi bi-building"></i>
+                <p>Mahasiswa</p>
               </a>
             </li>
           </ul>

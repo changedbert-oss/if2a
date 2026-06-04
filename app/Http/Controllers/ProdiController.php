@@ -24,6 +24,7 @@ class ProdiController extends Controller
     public function create()
     {
         $fakultas = Fakultas::all();
+
         return view('prodi.create', compact('fakultas'));
     }
 
@@ -32,8 +33,8 @@ class ProdiController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->valuable([
-            'nama_prodi' => 'required|unique:fakultas',
+        $input = $request->validate([
+            'nama_prodi' => 'required|unique:prodis',
             'singkatan' => 'required',
             'kaprodi' => 'required',
             'fakultas_id' => 'required'
@@ -64,7 +65,7 @@ class ProdiController extends Controller
      */
     public function update(Request $request, Prodi $prodi)
     {
-        //
+        $input = $request->validate([]);
     }
 
     /**

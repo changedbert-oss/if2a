@@ -9,13 +9,28 @@
             <tr>
                 <th>Tahun Akademik</th>
                 <th>Semester</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($result as $item)
+            @foreach ($Periode as $Periode)
                 <tr>
-                    <td>{{ $item -> tahun_akademik }}</td>
-                    <td>{{ $item -> semester }}</td>
+                    <td>{{ $Periode -> tahun_akademik }}</td>
+                    <td>{{ $Periode -> semester }}</td>
+                    <td>
+                        <a href = "{{ route('Periode.edit', $Periode->id) }}" class = "btn
+                            btn-warning btn rounded">Ubah</a>
+                        <form method = "POST" action="{{ route('Periode.destroy', $Periode->id) }}
+                            " class = "d-inline">
+                        @csrf
+                            <input type="_method" type = "hidden" value = "DELETE">
+                            <button type = "submit" class = "btn btn-xs btn-danger btn-rounded
+                            show_confirm" data-toggle="tooltip" title=""></button>
+                        </form>
+
+
+                    </td>
+
                 </tr>
             @endforeach
         </tbody>
